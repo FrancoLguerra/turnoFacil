@@ -22,6 +22,9 @@ class TurnoFacilView{
         $this->smarty->display('./templates/list_medic.tpl');
 
     }
-
+    function showDispByMedic($turns){
+        $this->smarty->assign('turns', $turns);
+        $this->smarty->display('./templates/list_disp_turnos.tpl');
+    }
     
 }

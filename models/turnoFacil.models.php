@@ -31,5 +31,16 @@ class TurnoFacilModel{
 
 
     }
+    
+    function getDispByMedic($id){
+
+        $query = $this->db->prepare('SELECT *  from  disp_medico JOIN medico ON medico.id_medico=disp_medico.id_medico WHERE medico.id_medico =?');
+
+        $query->execute([$id]);
+
+        return $query->fetchAll(PDO::FETCH_OBJ);
+
+
+    }
 
 }

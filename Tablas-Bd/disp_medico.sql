@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `disp_medico` (
-  `id_dia` int(20) NOT NULL,
+  `id_disp` int(20) NOT NULL,
   `id_medico` int(11) NOT NULL,
   `horario_inicio` varchar(60) NOT NULL,
   `horario_fin` varchar(60) NOT NULL,
@@ -39,17 +39,18 @@ CREATE TABLE `disp_medico` (
 -- Volcado de datos para la tabla `disp_medico`
 --
 
-INSERT INTO `disp_medico` (`id_dia`, `id_medico`, `horario_inicio`, `horario_fin`, `dia`) VALUES
-(1, 1, '(9:00-12:00) ', '(14:00-18:00)', 'Lunes'),
-(2, 1, '(18:00-20:00)', '(21:00)', 'Lunes'),
-(5, 1, '(9:00-12:00) ', '(14:00-18:00)', 'Martes'),
-(7, 1, '(18:00-20:00)', '(21:00-00:00)', 'Martes'),
-(9, 2, '(9:00-12:00) ', '(21:00-00:00)(00:00)', 'Lunes'),
-(10, 3, '(18:00-20:00)', '(21:00)(00:00)', 'Jueves'),
-(11, 4, '(7:00-12:00)', '(13:00- 16:00)', 'Viernes'),
-(12, 2, '(9:00-12:00) ', '(21:00-00:00)(00:00)', 'Lunes'),
-(13, 3, '(18:00-20:00)', '(21:00)(00:00)', 'Jueves'),
-(14, 4, '(7:00-12:00)', '(13:00- 16:00)', 'Viernes');
+INSERT INTO `disp_medico` (`id_disp`, `id_medico`, `horario_inicio`, `horario_fin`, `dia`) VALUES
+(1, 1, '9:00 ', '14:00', 'Lunes'),
+(2, 1, '18:00', '21:00', 'Lunes'),
+(5, 1, '9:00', '14:00', 'Martes'),
+(7, 1, '18:00', '21:00', 'Martes'),
+(9, 2, '9:00', '11:00', 'Lunes'),
+(10, 3, '18:00', '21:00', 'Jueves'),
+(11, 4, '7:30', '13:30', 'Viernes'),
+(12, 2, '15:00', '18:00', 'Lunes'),
+(13, 3, '18:00', '21:00', 'Miércoles'),
+(14, 4, '12:30', '16:30', 'Miércoles');
+
 
 --
 -- Índices para tablas volcadas
@@ -59,7 +60,7 @@ INSERT INTO `disp_medico` (`id_dia`, `id_medico`, `horario_inicio`, `horario_fin
 -- Indices de la tabla `disp_medico`
 --
 ALTER TABLE `disp_medico`
-  ADD PRIMARY KEY (`id_dia`),
+  ADD PRIMARY KEY (`id_disp`),
   ADD KEY `id_medico` (`id_medico`);
 
 --
@@ -70,7 +71,7 @@ ALTER TABLE `disp_medico`
 -- AUTO_INCREMENT de la tabla `disp_medico`
 --
 ALTER TABLE `disp_medico`
-  MODIFY `id_dia` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_disp` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas

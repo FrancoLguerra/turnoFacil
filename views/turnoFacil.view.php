@@ -27,4 +27,10 @@ class TurnoFacilView{
         $this->smarty->display('./templates/list_disp_turnos.tpl');
     }
     
+    /* IMS-22 vista para modificar disponibilidad de turnos */
+    function showUpdateDisp($turno) {
+        $this->smarty->assign('titulo', 'Modificando Turno');	
+        $this->smarty->assign('turno', $turno);
+        $this->smarty->display('./templates/modificando_turno.tpl');
+    }
 }

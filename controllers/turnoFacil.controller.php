@@ -35,5 +35,14 @@ class TurnoFacilController{
         $this->view->showMedicsAssigned($medic);
 
     }
+    public function showDispByMedic($id){
+        
+        
+        $turns = $this->model->getDispByMedic($id);
+
+        $this->view->showDispByMedic($turns);
+
+    }
+
 
 }

@@ -23,7 +23,7 @@ class TurnoFacilModel{
 
     function getMedicsAssigned($id){
 
-        $query = $this->db->prepare('SELECT *  from  medico JOIN secretaria on medico.id_secretaria  = secretaria.id_secretaria  WHERE secretaria.id_secretaria =?');
+        $query = $this->db->prepare('SELECT *  from  secretaria JOIN medico on medico.id_secretaria  = secretaria.id_secretaria  WHERE secretaria.id_secretaria =?');
 
         $query->execute([$id]);
 
@@ -31,6 +31,16 @@ class TurnoFacilModel{
 
 
     }
+    
+    function getDispByMedic($id){
 
+        $query = $this->db->prepare('SELECT *  from  disp_medico JOIN medico ON medico.id_medico=disp_medico.id_medico WHERE medico.id_medico =?');
+
+        $query->execute([$id]);
+
+        return $query->fetchAll(PDO::FETCH_OBJ);
+
+
+    }
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-11-03 18:08:32
+/* Smarty version 3.1.39, created on 2022-11-05 16:10:18
   from 'C:\xampp2\htdocs\turnoFacil\templates\list_disp_turnos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6363f590033504_10711758',
+  'unifunc' => 'content_63667cda708d77_84441612',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7905dde0da386bb16108e7cb421c6afe44ccf22f' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\turnoFacil\\templates\\list_disp_turnos.tpl',
-      1 => 1666958263,
+      1 => 1667660960,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6363f590033504_10711758 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63667cda708d77_84441612 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
      <label id="a" class="title">Turnos disponibles</label>
@@ -45,6 +45,7 @@ $_smarty_tpl->tpl_vars['turn']->do_else = false;
  
                         <?php if ((isset($_SESSION['USER_ID']))) {?>
                             <a class='btn btn-danger' href='borrarDisp/<?php echo $_smarty_tpl->tpl_vars['turn']->value->id_disp;?>
+/<?php echo $_smarty_tpl->tpl_vars['turn']->value->id_medico;?>
 '>Borrar</a>
                             <a class='btn btn-primary' href='modificarDisp/<?php echo $_smarty_tpl->tpl_vars['turn']->value->id_disp;?>
 '>Modificar</a>

@@ -35,6 +35,12 @@ class TurnoFacilController{
         $this->view->showMedicsAssigned($medic);
 
     }
+ 
+    public function borrarDisp($id_turno, $id_medico){
+        $this->model->borrarDisp($id_turno);
+        header("Location: " . BASE_URL . "detalleMd/" . $id_medico);
+    }
+    
     public function showDispByMedic($id){
         
         

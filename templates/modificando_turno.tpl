@@ -2,7 +2,7 @@
 
 <h1> {$titulo} </h1>
 
-<form name='formulario' method='GET' action='modificarDisp/{$turno->id_dia}/{$turno->id_medico}'>
+<form name='formulario' method='GET' action='modificarDisp/{$turno->id_disp}/{$turno->id_medico}'>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Horario Inicio</label>
         <input type='text' name='horario_inicio' value='{$turno->horario_inicio}' class="form-control">

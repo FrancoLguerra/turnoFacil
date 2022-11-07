@@ -51,11 +51,6 @@ switch ($params[0]) {
         $authController->login();
         break;
 
-        
-
-
-
-
         //ciero session
     case 'logout':
         $authController = new AuthController();
@@ -63,8 +58,6 @@ switch ($params[0]) {
         break;
 
         /* CIERRRE DE Listo*/ 
-
-
 
         //muestra pantalla registro
     case 'register':
@@ -77,6 +70,17 @@ switch ($params[0]) {
         $authController = new AuthController();
         $authController->register();
     break;
+
+    case 'crearDisp':
+        $controller = new TurnoFacilController();
+        $controller->showCreateDisp($params[1]);
+    break;
+
+    case 'altaDisp':
+        $controller = new TurnoFacilController();
+        $controller->altaDisp();
+    break;
+
 
 
         /*

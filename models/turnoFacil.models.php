@@ -44,6 +44,10 @@ class TurnoFacilModel{
 
 
     }
+    function borrarDisp($id_turno){
+        $query = $this->db->prepare('DELETE FROM disp_medico WHERE id_disp=?');
+        $query->execute([$id_turno]);
+    }
 
     /*/ IMS-22 funcion para modificar disponibilidad desde la base de datos */
     public function alterTurno($id_turno, $inicio, $fin) {

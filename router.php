@@ -30,6 +30,11 @@ switch ($params[0]) {
         $controller->showMedicsAssigned();
         break;
 
+    case 'borrarDisp':
+        $controller = new TurnoFacilController();
+        $controller->borrarDisp($params[1], $params[2]);
+        break;
+
     case 'detalleMd':
         $controller = new TurnoFacilController();
         $controller->showDispByMedic($params[1]);

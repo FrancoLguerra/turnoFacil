@@ -1,7 +1,7 @@
 {include 'header.tpl'}
 <div class="mt-5 w-25 mx-auto">
 <label class="title">Logearse</label>
-    <form method="POST" action="verify">
+    <form method="POST" class="form glass" action="verify">
         <div class="form-group">
             <label for="nombre">nombre</label>
             <input type="text" required class="form-control boton" id="nombre" name="nombre" aria-describedby="emailHelp">

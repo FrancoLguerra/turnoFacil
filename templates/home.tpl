@@ -1,17 +1,29 @@
 {include file="header.tpl"}
 
-<main >
+<main class="container-hm">
 
-<div class="contenedor">
-    <div class=" grid">
-     
+    <div class="container-home glass">
+        <div class="container-title">
+            <h3>Turno</h3>
+            <h3 class="amarillo">Facil</h3>
+        </div>
+        <div class="container-item-home">
 
-            <h1>Estas en Home</h1>
+            <div class="container-ingresar input-group mb-3">
+                <input type="text" class="form-control" placeholder="Ingrese su DNI"
+                    aria-label="Ingrese su DNI" aria-describedby="button-addon2">
+                <button class="btn btn-secondary" type="button" id="button-addon2">Button</button>
+            </div>
 
-        
-    </div>                
+            <div class="container-img">
+                <img src="{BASE_URL}/assets/img-hero.jpg">
+            </div>
+
+
+
+        </div>
+
     </div>
-</div>
 </main>
 
 

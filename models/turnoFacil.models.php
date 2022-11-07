@@ -28,8 +28,6 @@ class TurnoFacilModel{
         $query->execute([$id]);
 
         return $query->fetchAll(PDO::FETCH_OBJ);
-
-
     }
     
     function getDispByMedic($id){
@@ -39,8 +37,10 @@ class TurnoFacilModel{
         $query->execute([$id]);
 
         return $query->fetchAll(PDO::FETCH_OBJ);
-
-
     }
 
+    function altaDisp($id_medico, $horario_inicio, $horario_fin, $dia) {
+        $query = $this->db->prepare('INSERT INTO disp_medico (id_medico, horario_inicio, horario_fin, dia) VALUES (?,?,?,?)');
+        $query->execute([$id_medico, $horario_inicio, $horario_fin, $dia]);
+    }
 }

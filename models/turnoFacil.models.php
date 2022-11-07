@@ -14,7 +14,7 @@ class TurnoFacilModel{
 
     public function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_metodologia_2022;charset=utf8','root','');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_metodologia_tpe;charset=utf8','root','');
         // atributos de pdo para el debug de errorers
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
@@ -78,8 +78,8 @@ class TurnoFacilModel{
         }    
     }
 
-    function altaDisp($id_medico, $horario_inicio, $horario_fin, $dia) {
-        $query = $this->db->prepare('INSERT INTO disp_medico (id_medico, horario_inicio, horario_fin, dia) VALUES (?,?,?,?)');
-        $query->execute([$id_medico, $horario_inicio, $horario_fin, $dia]);
+    function altaDisp($id_medico, $horario_inicio, $horario_fin, $dia,$duracion) {
+        $query = $this->db->prepare('INSERT INTO disp_medico (id_medico, horario_inicio, horario_fin, dia, duracion) VALUES (?,?,?,?,?)');
+        $query->execute([$id_medico, $horario_inicio, $horario_fin, $dia, $duracion]);
     }
 }

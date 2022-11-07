@@ -22,7 +22,7 @@ class UserModel {
 
 public function __construct()
 {
-    $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_metodologia_2022;charset=utf8','root','');
+    $this->db = new PDO('mysql:host=localhost;'.'dbname=bd_metodologia_tpe;charset=utf8','root','');
 }
 
 

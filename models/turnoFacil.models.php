@@ -15,6 +15,8 @@ class TurnoFacilModel{
     public function __construct()
     {
         $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_metodologia_2022;charset=utf8','root','');
+        // atributos de pdo para el debug de errorers
+        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
 
@@ -45,6 +47,39 @@ class TurnoFacilModel{
     function borrarDisp($id_turno){
         $query = $this->db->prepare('DELETE FROM disp_medico WHERE id_disp=?');
         $query->execute([$id_turno]);
+    }
+
+    /*/ IMS-22 funcion para modificar disponibilidad desde la base de datos */
+    public function alterTurno($id_turno, $inicio, $fin) {
+        try {
+            $query = $this->db->prepare('UPDATE disp_medico SET horario_inicio=?, horario_fin=? WHERE id_disp=?');
+            $query->execute([$inicio, $fin, $id_turno]);
+        }
+        catch (PDOException $error) {
+            // devuelve el error y lo imprime
+            $message = $error->getMessage();
+            $code = $error->getCode();
+            return $message . '/' . $code;
+        }
+    }
+
+    /* IMS-22 funcion para retornar un turno dado su id */
+    public function getTurno($id) {
+        try {
+            $query = $this->db->prepare('SELECT * FROM disp_medico WHERE id_disp=?');
+            $query->execute([$id]);
+            
+            $turno = $query->fetch(PDO::FETCH_OBJ);
+
+            return $turno;
+
+        }
+        catch (PDOException $error) {
+    
+            $error->getMessage();
+    
+            echo $error;
+        }    
     }
 
 }

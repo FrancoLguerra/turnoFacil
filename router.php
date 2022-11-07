@@ -5,6 +5,9 @@ require_once './controllers/turnoFacil.controller.php';
 
 require_once './controllers/auth.controller.php';
 
+// document root
+define ('DOCUMENT_ROOT', '/' . $_SERVER['DOCUMENT_ROOT'] . dirname($_SERVER['PHP_SELF']) . '/');
+
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/login');
@@ -37,9 +40,11 @@ switch ($params[0]) {
         $controller->showDispByMedic($params[1]);
         break;
 
-
-
-
+    /* IMS-22 modificar turnos disponibles por medico */
+    case 'modificarDisp':
+        $controller = new TurnoFacilController();
+        $controller->modifyDispByMedic($params[1], $params[2]);
+        break;
 
         /*Listo*/ 
 
@@ -88,3 +93,5 @@ switch ($params[0]) {
 
     */
 }
+
+?>

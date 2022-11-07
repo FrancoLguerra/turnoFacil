@@ -36,6 +36,7 @@ class AuthController {
             } 
         }
     }
+
     /**
      * Verifica si los datos del user son correctos
      */

@@ -42,5 +42,9 @@ class TurnoFacilModel{
 
 
     }
+    function borrarDisp($id_turno){
+        $query = $this->db->prepare('DELETE FROM disp_medico WHERE id_disp=?');
+        $query->execute([$id_turno]);
+    }
 
 }

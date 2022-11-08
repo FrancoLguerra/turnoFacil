@@ -37,12 +37,26 @@ class TurnoFacilController{
     }
     
     public function showDispByMedic($id){
-        
-        
         $turns = $this->model->getDispByMedic($id);
 
-        $this->view->showDispByMedic($turns);
+        $this->view->showDispByMedic($turns, $id);
+    }
 
+    public function showCreateDisp($id) {
+        $turns = $this->model->getDispByMedic($id);
+
+        $this->view->showCreateDisp($id);
+    }
+
+    public function altaDisp() {
+        $id_medico = $_REQUEST['id_medico'];
+        $horario_inicio = $_REQUEST['horario_inicio'];
+        $horario_fin = $_REQUEST['horario_fin'];
+        $dia = $_REQUEST['dia'];
+        $duracion = $_REQUEST['duracion'];
+
+        $this->model->altaDisp($id_medico, $horario_inicio, $horario_fin, $dia, $duracion);
+        header("Location: " . BASE_URL . "detalleMd/$id_medico");
     }
 
     /* IMS-22 func desde el controller para modificar un turno de disponibilidad medico desde el modelo */

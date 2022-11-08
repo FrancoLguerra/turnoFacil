@@ -1,7 +1,7 @@
 {include file="header.tpl"}
      <label id="a" class="title">Turnos disponibles</label>
         {if isset($smarty.session.USER_ID)}
-        <a class='btn btn-danger' href='crearDisp'>Crear</a> 
+        <a class='btn btn-primary' href='crearDisp/{$id}'>Crear</a> 
         {/if}
         <ul class="list-group list-unstyled mt-5">
           

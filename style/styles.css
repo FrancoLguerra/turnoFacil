@@ -1,0 +1,88 @@
+
+body{
+    background-image: url('../assets/fondo.jpg');
+    height: 100vh;
+    color: white;
+}
+.amarillo{
+    color: rgb(226, 211, 6);
+}
+.header{
+    width: 100%;
+    padding: 25px;
+    background-color: #1E808D;
+    color: white;
+}
+.nav .nav-item a{
+    color: white;
+}
+.container-hm{
+    display: flex;
+    justify-content: center;
+}
+
+.container-title{
+    display: flex;
+}
+
+.container-title h3{
+    margin: 0 7px;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    margin-top: 7rem;
+    height: 450px;
+    border: 1px solid black;
+    
+}
+
+.form{
+    padding: 40px;
+    
+}
+.glass{
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+.container-item-home{
+
+    margin: 40px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0);
+
+}
+.container-item-home .container-img img{
+    width: 250px;
+    
+    margin-left: 3rem;
+}
+
+.main_contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+<<<<<<< HEAD
+}
+
+.container-turno{
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 5rem;
+=======
+
+>>>>>>> dev-Base
+}

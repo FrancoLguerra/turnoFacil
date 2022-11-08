@@ -14,7 +14,7 @@ class TurnoFacilModel{
 
     public function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_metodologia_tpe;charset=utf8','root','');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=metodologia_2022;charset=utf8','root','');
         // atributos de pdo para el debug de errorers
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }

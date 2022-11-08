@@ -46,10 +46,10 @@ class TurnoFacilModel{
     }
 
     /*/ IMS-22 funcion para modificar disponibilidad desde la base de datos */
-    public function alterTurno($id_turno, $inicio, $fin) {
+    public function alterTurno($id_turno, $inicio, $fin, $duracion) {
         try {
-            $query = $this->db->prepare('UPDATE disp_medico SET horario_inicio=?, horario_fin=? WHERE id_disp=?');
-            $query->execute([$inicio, $fin, $id_turno]);
+            $query = $this->db->prepare('UPDATE disp_medico SET horario_inicio=?, horario_fin=?, duracion=? WHERE id_disp=?');
+            $query->execute([$inicio, $fin, $duracion, $id_turno]);
         }
         catch (PDOException $error) {
             // devuelve el error y lo imprime

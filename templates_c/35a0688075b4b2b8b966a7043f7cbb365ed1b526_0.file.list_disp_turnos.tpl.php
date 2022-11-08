@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-11-07 22:17:17
+/* Smarty version 3.1.39, created on 2022-11-08 00:29:06
   from 'C:\Program Files\xampp\htdocs\metodologia\turnoFacil\templates\list_disp_turnos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_636975dd1dfd90_89857731',
+  'unifunc' => 'content_636994c229c4b3_42717789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35a0688075b4b2b8b966a7043f7cbb365ed1b526' => 
     array (
       0 => 'C:\\Program Files\\xampp\\htdocs\\metodologia\\turnoFacil\\templates\\list_disp_turnos.tpl',
-      1 => 1667855760,
+      1 => 1667863724,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_636975dd1dfd90_89857731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636994c229c4b3_42717789 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
      <label id="a" class="title">Turnos disponibles</label>
         <?php if ((isset($_SESSION['USER_ID']))) {?>
-        <a class='btn btn-danger' href='crearDisp'>Crear</a> 
+        <a class='btn btn-danger' href='crearDisp/<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+'>Crear</a> 
         <?php }?>
         <ul class="list-group list-unstyled mt-5">
           

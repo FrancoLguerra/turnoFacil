@@ -1,7 +1,6 @@
 {include "header.tpl"}
 
-<div class="col-6 display-flex">
-    <div class="input-group mb-3">
+    <div class="container-turno input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon3">Horas de inicio y fin del turno</span>
         </div>
@@ -21,6 +20,5 @@
             <input type="hidden" name="id_medico" value="{$id}">
         </form>
     </div>
-</div>
 
 {include "footer.tpl"}

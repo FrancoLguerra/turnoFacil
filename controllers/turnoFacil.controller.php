@@ -53,8 +53,9 @@ class TurnoFacilController{
         $horario_inicio = $_REQUEST['horario_inicio'];
         $horario_fin = $_REQUEST['horario_fin'];
         $dia = $_REQUEST['dia'];
+        $duracion = $_REQUEST['duracion'];
 
-        $this->model->altaDisp($id_medico, $horario_inicio, $horario_fin, $dia);
+        $this->model->altaDisp($id_medico, $horario_inicio, $horario_fin, $dia, $duracion);
         header("Location: " . BASE_URL . "detalleMd/$id_medico");
     }
 

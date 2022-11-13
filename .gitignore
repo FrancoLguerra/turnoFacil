@@ -1,2 +1,6 @@
 libs/*
 templates_c/*
+
+# Excepcion
+!libs/.gitkeep
+!templates_c/.gitkeep

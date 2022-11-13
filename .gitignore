@@ -1,2 +1,2 @@
-libs/smarty-master
-templates_c/
+libs/*
+templates_c/*

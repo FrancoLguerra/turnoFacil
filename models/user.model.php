@@ -27,16 +27,16 @@ public function __construct()
 
 
     function getUser($nombre) {
-        $query = $this->db->prepare('SELECT * FROM secretaria WHERE nombre = ?');
+        $query = $this->db->prepare('SELECT * FROM usuario WHERE nombre_usuario = ?');
         $query->execute([$nombre]);
         $user = $query->fetch(PDO::FETCH_OBJ);
         return $user;
     }
 
  
-    function regUser($nombre, $password){
-        $query = $this->db->prepare('INSERT INTO secretaria(nombre, password) VALUES (?,?)');
-        $query->execute([$nombre,$password]);
+    function regUser($nombre, $password, $rol){
+        $query = $this->db->prepare('INSERT INTO usuario(nombre_usuario, password, rol_usuario) VALUES (?, ?, ?)');
+        $query->execute([$nombre,$password, $rol]);
 
         
     }

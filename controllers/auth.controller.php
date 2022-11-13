@@ -22,16 +22,17 @@ class AuthController {
     }
     public function register(){
     
-        if (!empty($_POST['nombre']) && !empty($_POST['password'])) {
+        if (!empty($_POST['nombre']) && !empty($_POST['password']) && !empty($_POST['rol'])) {
             $nombre = $_POST['nombre'];
             $userPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $rol = $_POST['rol'];
             $user = $this->model->getUser($nombre);
             if ( $user ) {
                 $this->view->showFormRegister("El email ya esta registrado");
 
             }else{
                 // Agrego el usuario a la base de datos
-                $this->model->regUser($nombre , $userPassword);
+                $this->model->regUser($nombre , $userPassword, $rol);
                 header("Location: " . BASE_URL); 
             } 
         }

@@ -25,7 +25,7 @@ class TurnoFacilModel{
 
     function getMedicsAssigned($id){
 
-        $query = $this->db->prepare('SELECT *  from  secretaria JOIN medico on medico.id_secretaria  = secretaria.id_secretaria  WHERE secretaria.id_secretaria =?');
+        $query = $this->db->prepare('SELECT * FROM usuario JOIN secretaria ON usuario.id_usuario = secretaria.id_usuario JOIN medico ON medico.id_secretaria  = secretaria.id_secretaria  WHERE usuario.id_usuario = ?');
 
         $query->execute([$id]);
 

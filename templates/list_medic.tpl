@@ -8,7 +8,7 @@
  
         
         {foreach from=$medics  item=medic}        
-                    <li class='list-group-item'><a class='btn'  href='detalleMd/{$medic->id_medico}'>{$medic->nombre} - {$medic->id_secretaria} - {$medic->especialidad} -{$medic->obra_social} </a>
+                    <li class='list-group-item'><a class='btn'  href='detalleMd/{$medic->id_medico}'>{$medic->nombre} - {$medic->especialidad} -{$medic->obra_social} </a>
                       
                         </li>
             {/foreach}

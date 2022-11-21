@@ -37,13 +37,13 @@
                 </li>
                     {if !isset($smarty.session.USER_ID)}
                         <li class="nav-item">
-                            <a href="login" aria-current="page" class="nav-link ">Trabajo aqui</a>
+                            <a href="login" aria-current="page" class="nav-link ">Trabajo aquí</a>
                         </li>
                         
                     {/if}
                     {if isset($smarty.session.USER_ID)}
                         <li class="nav-item">
-                        <a href="medicos-a-cargo" class="nav-link ">Obt medicos</a>
+                        <a href="medicos-a-cargo" class="nav-link ">Lista médicos</a>
                         </li>
                         <li class="nav-item">
                         <a href="logout" class="nav-link ">Log Out</a>

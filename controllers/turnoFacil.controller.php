@@ -65,7 +65,8 @@ class TurnoFacilController{
         if ( (isset($_GET['horario_inicio']) || !empty($_GET['horario_inicio'])) && (isset($_GET['horario_fin']) || !empty($_GET['horario_fin'])) ) {
             $new_inicio = $_GET['horario_inicio']; 
             $new_fin = $_GET['horario_fin'];
-            $this->model->alterTurno($id_turno, $new_inicio, $new_fin);
+            $new_duracion = $_GET['duracion'];
+            $this->model->alterTurno($id_turno, $new_inicio, $new_fin, $new_duracion);
             // vuelve atras
             $this->showDispByMedic($id_medico);
         }

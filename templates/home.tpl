@@ -7,22 +7,17 @@
             <h3>Turno</h3>
             <h3 class="amarillo">Facil</h3>
         </div>
-        <div class="container-item-home">
-
-            <div class="container-ingresar input-group mb-3">
-                <input type="text" class="form-control" placeholder="Ingrese su DNI"
-                    aria-label="Ingrese su DNI" aria-describedby="button-addon2">
-                <button class="btn btn-secondary" type="button" id="button-addon2">Ingresar</button>
-            </div>
-
+        {if isset($smarty.session.USER_ID)}
+        
+        <p> Bienvenido {$smarty.session.USER_NOMBRE}</p>
+        <div class="container-item-home">     
+           
             <div class="container-img">
                 <img src="{BASE_URL}/assets/img-hero.jpg">
             </div>
-
-
-
+    
         </div>
-
+        {/if}
     </div>
 </main>
 

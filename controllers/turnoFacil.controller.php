@@ -76,5 +76,8 @@ class TurnoFacilController{
         }
     }
 
+    function agendarTurno(){
+        $this->view->agendarTurno();
+    }
 
 }

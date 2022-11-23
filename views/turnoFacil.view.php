@@ -15,7 +15,9 @@ class TurnoFacilView{
         $this->smarty->display('./templates/home.tpl');
     }
 
-    
+    function agendarTurno(){
+        $this->smarty->display('./templates/agendarTurno.tpl');
+    }
     function showMedicsAssigned($medics){
 
         $this->smarty->assign('medics', $medics);

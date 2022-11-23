@@ -24,12 +24,16 @@ switch ($params[0]) {
     case 'home':
         $controller = new TurnoFacilController();
         $controller->showHome();
-        break;
+        break;        
     case 'medicos-a-cargo':
         $controller = new TurnoFacilController();
         $controller->showMedicsAssigned();
         break;
-
+    case 'agendarTurno':
+        $controller = new TurnoFacilController();
+        $controller->agendarTurno();
+        break;
+    
     case 'borrarDisp':
         $controller = new TurnoFacilController();
         $controller->borrarDisp($params[1], $params[2]);

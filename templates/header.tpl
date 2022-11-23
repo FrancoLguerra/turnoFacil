@@ -42,17 +42,30 @@
                         
                     {/if}
                     {if isset($smarty.session.USER_ID)}
+                        {if {$smarty.session.USER_ROL=='S'}}
                         <li class="nav-item">
                         <a href="medicos-a-cargo" class="nav-link ">Lista médicos</a>
                         </li>
                         <li class="nav-item">
-                        <a href="logout" class="nav-link ">Log Out</a>
+                        <a href="agendarTurno" class="nav-link ">Agendar turno</a>
                         </li>
+                        
+                        {/if}
+                        {if {$smarty.session.USER_ROL=='M'}}
+                        <li class="nav-item">
+                        <a href="list_turnos" class="nav-link ">Lista de Turnos</a>
+                        </li>                        
+                        {/if}
+
+
+                        <li class="nav-item">
+                        <a href="logout" class="nav-link ">Log Out</a>
+                        </li>                        
                     {/if}
                     
                 </ul>
-
-
+                
+                    
             </div>
         </div>
     </header>

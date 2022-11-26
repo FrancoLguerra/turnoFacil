@@ -24,8 +24,8 @@ class TurnoFacilController{
 
     public function showMedicsAssigned(){
         
-        $secretary = $_SESSION['USER_ID'];
-        $medic = $this->model->getMedicsAssigned($secretary);
+        $id_usuario = $_SESSION['USER_ID'];
+        $medic = $this->model->getMedicsAssigned($id_usuario);
 
         $this->view->showMedicsAssigned($medic);
 

@@ -25,12 +25,14 @@ class TurnoFacilModel{
 
     function getMedicsAssigned($id){
 
-        $query = $this->db->prepare('SELECT * FROM usuario JOIN secretaria ON usuario.id_usuario = secretaria.id_usuario JOIN medico ON medico.id_secretaria  = secretaria.id_secretaria  WHERE usuario.id_usuario = ?');
+        $query = $this->db->prepare('SELECT * from secretaria  JOIN medico ON medico.id_secretaria  = secretaria.id_secretaria  WHERE secretaria.id_secretaria = ?');
 
         $query->execute([$id]);
 
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+
     
     function getDispByMedic($id){
 
@@ -60,7 +62,7 @@ class TurnoFacilModel{
     }
 
     /* IMS-22 funcion para retornar un turno dado su id */
-    public function getTurno($id) {
+    public function getDispTurno($id) {
         try {
             $query = $this->db->prepare('SELECT * FROM disp_medico WHERE id_disp=?');
             $query->execute([$id]);
@@ -82,4 +84,20 @@ class TurnoFacilModel{
         $query = $this->db->prepare('INSERT INTO disp_medico (id_medico, horario_inicio, horario_fin, dia, duracion) VALUES (?,?,?,?,?)');
         $query->execute([$id_medico, $horario_inicio, $horario_fin, $dia, $duracion]);
     }
+
+
+
+    function addTurno($medic, $nombre, $apellido,$dni, $oSocial,$dia , $hs) {
+        $query = $this->db->prepare('INSERT INTO turno_paciente (medico_asignado, nombre_paciente, apellido_paciente, dni_paciente, obra_social ,dia, hs) VALUES (?,?,?,?,?,?,?)');
+        $query->execute([$medic, $nombre, $apellido,$dni, $oSocial,$dia , $hs]);
+    }
+
+
+    function getTurns($id) {
+            $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=?');
+            $query->execute([$id]);
+            return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
 }

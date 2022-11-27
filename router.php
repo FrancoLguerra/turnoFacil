@@ -93,9 +93,34 @@ switch ($params[0]) {
 
 
 
-        /*
+    //show forms add Turno
+    
+    case 'formTurno';
 
-    */
+        $controller = new TurnoFacilController();
+        $controller->showFormAddTurno();
+
+    break;
+
+    //add turno --> Secretaria ->addTurno
+
+   
+    case 'addTurno';
+
+        $controller = new TurnoFacilController();
+        $controller->addTurno();
+
+    break;
+
+    //Show turnosByMedicos
+    case 'showTurns':
+        $controller = new TurnoFacilController();
+        $controller->showTurns();
+    break;  
+
+
+
+    
 }
 
 ?>

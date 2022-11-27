@@ -39,4 +39,15 @@ class TurnoFacilView{
         $this->smarty->assign('turno', $turno);
         $this->smarty->display('./templates/modificando_turno.tpl');
     }
+
+    function showFormAddTurno($medics){
+        $this->smarty->assign('medics', $medics);
+        $this->smarty->display('./templates/show_form_add_turno.tpl');
+    }
+
+    function showTurns($turns){
+        $this->smarty->assign('turns', $turns);
+        $this->smarty->display('./templates/show_turns.tpl');
+
+    }
 }

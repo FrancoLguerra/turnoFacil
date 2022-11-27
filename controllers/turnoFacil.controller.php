@@ -71,10 +71,73 @@ class TurnoFacilController{
             $this->showDispByMedic($id_medico);
         }
         else {
-            $turno = $this->model->getTurno($id_turno);
+            $turno = $this->model->getDispTurno($id_turno);
             $this->view->showUpdateDisp($turno); 
         }
     }
 
+    //showaddTurno
+    public function showFormAddTurno(){
+            //la secretaria con us id
+            $id_usuario = $_SESSION['USER_ID'];
+            //id medico a asignar en el sistema
 
+            $medic = $this->model->getMedicsAssigned($id_usuario);
+
+            
+            
+            $this->view->showFormAddTurno($medic);
+    }
+
+
+    //addTurno
+
+  
+
+
+    public function addTurno(){
+      
+        if (!empty($_POST['medico']) && !empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['obra_social']) && !empty($_POST['dia']) && !empty($_POST['hs']) ) {
+
+            $medic = $_POST['medico']; 
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+
+            $oSocial = $_POST['obra_social']; 
+            $dni = $_POST['dni'];
+
+            $dia = $_POST['dia'];
+            $hs = $_POST['hs'];
+
+            $this->model->addTurno($medic, $nombre, $apellido,$dni, $oSocial,$dia , $hs);
+
+            
+        }
+        header("Location: " . BASE_URL);
+        
+    }
+
+
+    
+    
+    
+    //show Turnos
+    public function showTurns(){
+
+            $id_usuario = $_SESSION['USER_ID'];
+
+            $turns = $this->model->getTurns($id_usuario);
+            
+            $this->view->showTurns($turns);
+            
+        }
+        
 }
+    
+    /*
+          public function showCreateDisp($id) {
+        $turns = $this->model->getDispByMedic($id);
+
+        $this->view->showCreateDisp($id);
+    }
+     */

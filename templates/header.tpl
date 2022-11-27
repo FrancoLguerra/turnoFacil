@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brawls</title>
+    <title>TurnoFacil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -32,24 +32,44 @@
 
 
                 <ul class="nav">
-                <li class="nav-item">
-                <a href="home" class="nav-link ">Home</a>
-                </li>
+                    <li class="nav-item">
+                        <a href="home" class="nav-link ">Home</a>
+                    </li>
                     {if !isset($smarty.session.USER_ID)}
                         <li class="nav-item">
                             <a href="login" aria-current="page" class="nav-link ">Trabajo aquí</a>
                         </li>
-                        
+
                     {/if}
                     {if isset($smarty.session.USER_ID)}
-                        <li class="nav-item">
-                        <a href="medicos-a-cargo" class="nav-link ">Lista médicos</a>
-                        </li>
+
+                        {if  $smarty.session.USER_ROL == 'S'}
+                            <li class="nav-item">
+                                <a href="medicos-a-cargo" class="nav-link ">Lista médicos</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="formTurno" class="nav-link ">Form turno</a>
+                            </li>
+
+
+                        {elseif $smarty.session.USER_ROL == 'M'}
+                            <li class="nav-item">
+                                <a href="showTurns" class="nav-link ">Ver turnos</a>
+                            </li>
+
+
+                        {/if}
                         <li class="nav-item">
                         <a href="logout" class="nav-link ">Log Out</a>
                         </li>
+                        
+                        <li class="nav-item  ">
+                            <label href="logout" class="nav-link ">Bienvenido: {$smarty.session.USER_NOMBRE}</label>
+                        </li>
                     {/if}
-                    
+
+
                 </ul>
 
 

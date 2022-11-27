@@ -13,14 +13,16 @@ body{
     background-color: #1E808D;
     color: white;
 }
-.nav .nav-item a{
+.nav .nav-item a ,.nav .nav-item label{
     color: white;
 }
 .container-hm{
     display: flex;
     justify-content: center;
 }
-
+.nav{
+    justify-content: space-around;
+}
 .container-title{
     display: flex;
 }

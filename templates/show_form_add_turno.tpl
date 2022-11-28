@@ -19,7 +19,7 @@
                 <input type="text" name="nombre" placeholder="Ingrese Nombre"/>
                 <input type="text" name="apellido" placeholder="Ingrese Apellido"/>
                 <input type="text" name="obra_social" placeholder="Ingrese Obra Social"/>
-                <input type="text" name="dni" placeholder="Ingrese Dnai"/>
+                <input type="text" name="dni" placeholder="Ingrese Dni"/>
                 <input type="text" name="dia" placeholder="Ingrese Dia"/>
                 <input type="text" name="hs" placeholder="Ingrese Horario"/>
             

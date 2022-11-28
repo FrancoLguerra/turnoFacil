@@ -93,10 +93,17 @@ class TurnoFacilModel{
     }
 
 
-    function getTurns($id) {
+    function getTurns($id, $dia = null) {
+        if ($dia == null) {
             $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=?');
             $query->execute([$id]);
             return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+        else {
+            $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND dia=?');
+            $query->execute([$id, $dia]);
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
     }
 
 

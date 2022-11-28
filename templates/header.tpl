@@ -49,13 +49,13 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="formTurno" class="nav-link ">Form turno</a>
+                                <a href="formTurno" class="nav-link ">Agendar turno</a>
                             </li>
 
 
                         {elseif $smarty.session.USER_ROL == 'M'}
                             <li class="nav-item">
-                                <a href="showTurns" class="nav-link ">Ver turnos</a>
+                                <a href="showTurns" class="nav-link ">Lista de turnos</a>
                             </li>
 
 

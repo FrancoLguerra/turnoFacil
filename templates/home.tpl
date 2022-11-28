@@ -7,6 +7,7 @@
             <h3>Turno</h3>
             <h3 class="amarillo">Facil</h3>
         </div>
+        {if !isset($smarty.session.USER_ID)}
         <div class="container-item-home">
 
             <div class="container-ingresar input-group mb-3">
@@ -22,6 +23,10 @@
 
 
         </div>
+        {/if}
+        {if isset($smarty.session.USER_ID)}
+        <p>Bienvenido: {$smarty.session.USER_NOMBRE}</p>
+        {/if}
 
     </div>
 </main>

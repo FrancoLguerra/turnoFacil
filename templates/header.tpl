@@ -63,7 +63,6 @@
                         <li class="nav-item">
                         <a href="logout" class="nav-link ">Log Out</a>
                         </li>
-                        
                      
                     {/if}
 

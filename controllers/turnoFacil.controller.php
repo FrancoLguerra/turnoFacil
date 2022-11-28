@@ -122,16 +122,23 @@ class TurnoFacilController{
     
     
     //show Turnos
-    public function showTurns(){
+    public function showTurns($dia = null){
+        if ($dia == null) {
 
             $id_usuario = $_SESSION['USER_ID'];
 
             $turns = $this->model->getTurns($id_usuario);
             
             $this->view->showTurns($turns);
-            
         }
-        
+        else {
+            $id_usuario = $_SESSION['USER_ID'];
+
+            $turns = $this->model->getTurns($id_usuario, $dia);
+            
+            $this->view->showTurns($turns);
+        }
+    }
 }
     
     /*

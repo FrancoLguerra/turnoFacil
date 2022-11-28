@@ -114,9 +114,18 @@ switch ($params[0]) {
 
     //Show turnosByMedicos
     case 'showTurns':
-        $controller = new TurnoFacilController();
-        $controller->showTurns();
+        if(isset($params[1])){
+            $controller = new TurnoFacilController();
+            $controller->showTurns($params[1]);
+        }else{
+            $controller = new TurnoFacilController();
+            $controller->showTurns();
+        }
     break;  
+
+    default: 
+        echo('404 Page not found');
+    break;
 
 
 

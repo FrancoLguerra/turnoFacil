@@ -1,8 +1,15 @@
 {include file="header.tpl"}
 
+<div class="filtrar">
+   <a class="filtroDoc" href="turnosFiltrados/mañana">Mañana</a>
+   <a class="filtroDoc" href="turnosFiltrados/tarde">Tarde</a>
+   <a class="filtroDoc" href="showTurns">Todos</a>
+</div>
 
 
-<ul class="list-group list-unstyled mt-5">
+
+
+
       <label id="a" class="title">Turnos </label>
 
       <div class="d-flex justify-content-between">

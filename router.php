@@ -122,6 +122,10 @@ switch ($params[0]) {
             $controller->showTurns();
         }
     break;  
+    case 'turnosFiltrados':
+        $controller = new TurnoFacilController();
+        $controller->turnosMañanaTarde($params[1]);
+        break; 
 
     default: 
         echo('404 Page not found');

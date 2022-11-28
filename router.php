@@ -117,6 +117,10 @@ switch ($params[0]) {
         $controller = new TurnoFacilController();
         $controller->showTurns();
     break;  
+    case 'turnosFiltrados':
+        $controller = new TurnoFacilController();
+        $controller->turnosMañanaTarde($params[1]);
+        break; 
 
 
 

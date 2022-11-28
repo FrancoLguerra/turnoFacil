@@ -63,10 +63,7 @@
                         <li class="nav-item">
                         <a href="logout" class="nav-link ">Log Out</a>
                         </li>
-                        
-                        <li class="nav-item  ">
-                            <label href="logout" class="nav-link ">Bienvenido: {$smarty.session.USER_NOMBRE}</label>
-                        </li>
+                     
                     {/if}
 
 

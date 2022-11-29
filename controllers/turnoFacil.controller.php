@@ -158,7 +158,11 @@ class TurnoFacilController
         } else {
             $turns = $this->model->getTurnsTarde($id_usuario, $dia);
         }
+        if($turns == null){
+            $this->view->showError("No hay turnos para el dia seleccionado");
+        }else{
         $this->view->showTurns($turns);}
+        }
     }
 
     

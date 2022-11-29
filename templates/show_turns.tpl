@@ -1,17 +1,12 @@
 {include file="header.tpl"}
 
-<div class="filtrar">
-   <a class="filtroDoc" href="turnosFiltrados/mañana/2">Mañana</a>
-   <a class="filtroDoc" href="turnosFiltrados/tarde/2">Tarde</a>
-   <a class="filtroDoc" href="showTurns">Todos</a>
-</div>
 
 
 
 
 
 
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between dias">
 <a class="btn btn-primary" href="./showTurns/1" role="button">Lunes</a>
 <a class="btn btn-primary" href="./showTurns/2" role="button">Martes</a>
 <a class="btn btn-primary" href="./showTurns/3" role="button">Miércoles</a>
@@ -19,7 +14,7 @@
 <a class="btn btn-primary" href="./showTurns/5" role="button">Viernes</a>
 </div>
 <label id="a" class="title">Turnos </label>
-<ul class="list-group list-unstyled mt-5">
+<ul class="list-group list-unstyled mt-5 ">
         
          {foreach from=$turns  item=turn}        
             <li class='list-group-item'>
@@ -28,7 +23,12 @@
                       
             </li>
          {/foreach}
-        
+         <div class="filtrar">
+         <a class="filtroDoc" href="turnosFiltrados/mañana/{$turn->dia}">Mañana</a>
+         <a class="filtroDoc" href="turnosFiltrados/tarde/{$turn->dia}">Tarde</a>
+         <a class="filtroDoc" href="showTurns">Todos</a>
+      </div>
+      
         
    </ul>
 

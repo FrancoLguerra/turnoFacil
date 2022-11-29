@@ -50,4 +50,9 @@ class TurnoFacilView{
         $this->smarty->display('./templates/show_turns.tpl');
 
     }
+    function showError($mensaje){
+        $this->smarty->assign('mensaje', $mensaje);
+        $this->smarty->display('./templates/error.tpl');
+
+    }
 }

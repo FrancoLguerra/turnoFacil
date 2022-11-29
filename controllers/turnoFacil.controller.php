@@ -158,7 +158,7 @@ class TurnoFacilController
         } else {
             $turns = $this->model->getTurnsTarde($id_usuario);
         }
-        $this->view->showTurns($turns);
+        $this->view->showTurns($turns);}
 
     
     /*

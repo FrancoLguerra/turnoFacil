@@ -93,9 +93,47 @@ switch ($params[0]) {
 
 
 
-        /*
+    //show forms add Turno
+    
+    case 'formTurno';
 
-    */
+        $controller = new TurnoFacilController();
+        $controller->showFormAddTurno();
+
+    break;
+
+    //add turno --> Secretaria ->addTurno
+
+   
+    case 'addTurno';
+
+        $controller = new TurnoFacilController();
+        $controller->addTurno();
+
+    break;
+
+    //Show turnosByMedicos
+    case 'showTurns':
+        if(isset($params[1])){
+            $controller = new TurnoFacilController();
+            $controller->showTurns($params[1]);
+        }else{
+            $controller = new TurnoFacilController();
+            $controller->showTurns();
+        }
+    break;  
+    case 'turnosFiltrados':
+        $controller = new TurnoFacilController();
+        $controller->turnosMañanaTarde($params[1]);
+        break; 
+
+    default: 
+        echo('404 Page not found');
+    break;
+
+
+
+    
 }
 
 ?>

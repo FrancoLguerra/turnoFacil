@@ -1,2 +1,6 @@
-libs/smarty-master
-templates_c/
+libs/*
+templates_c/*
+
+# Excepcion
+!libs/.gitkeep
+!templates_c/.gitkeep

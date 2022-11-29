@@ -24,7 +24,7 @@
          {foreach from=$turns  item=turn}        
             <li class='list-group-item'>
                            
-               <a class='btn'  > Comprobante: {$turn->nro_comprobante} - Nombre: {$turn->nombre_paciente} - Obra social:  {$turn->obra_social} - Dia  {$turn->dia}- Hs  {$turn->hs}  </a>
+               <a class='btn'  > Comprobante: {$turn->nro_comprobante} - Nombre: {$turn->nombre_paciente}, {$turn->apellido_paciente}  - Obra social:  {$turn->obra_social} - Dia  {$turn->dia}-  {$turn->hs}  Hs  </a>
                       
             </li>
          {/foreach}

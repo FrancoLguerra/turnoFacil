@@ -149,18 +149,18 @@ class TurnoFacilController
         }
 
     }
-    public function turnosMañanaTarde($momento)
+    public function turnosMañanaTarde($momento,$dia)
     {
         $id_usuario = $_SESSION['USER_ID'];
 
         if ($momento == "mañana") {
-            $turns = $this->model->getTurnsMañana($id_usuario);
+            $turns = $this->model->getTurnsMañana($id_usuario, $dia);
         } else {
-            $turns = $this->model->getTurnsTarde($id_usuario);
+            $turns = $this->model->getTurnsTarde($id_usuario, $dia);
         }
         $this->view->showTurns($turns);}
     }
-}
+
     
     /*
           public function showCreateDisp($id) {

@@ -95,25 +95,25 @@ class TurnoFacilModel{
 
     function getTurns($id, $dia = null) {
         if ($dia == null) {
-            $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=?');
+            $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? order by dia, hs');
             $query->execute([$id]);
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
         else {
-            $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND dia=?');
+            $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND dia=? order by dia,hs');
             $query->execute([$id, $dia]);
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
     }
-function getTurnsMañana($id_usuario){
-    $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND hs BETWEEN "06:00:00" AND "12:00:00"');
-    $query->execute([$id_usuario]);
+function getTurnsMañana($id_usuario, $dia){
+    $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND hs BETWEEN "06:00:00" AND "12:00:00" AND dia=?');
+    $query->execute([$id_usuario, $dia]);
     return $query->fetchAll(PDO::FETCH_OBJ);
 }
 
-function getTurnsTarde($id_usuario){
-    $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND hs BETWEEN "12:00:00" AND "22:00:00"');
-    $query->execute([$id_usuario]);
+function getTurnsTarde($id_usuario, $dia){
+    $query = $this->db->prepare('SELECT * FROM turno_paciente WHERE medico_asignado=? AND hs BETWEEN "12:00:00" AND "22:00:00" AND dia = ?');
+    $query->execute([$id_usuario, $dia]);
     return $query->fetchAll(PDO::FETCH_OBJ);
 }
 

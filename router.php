@@ -124,7 +124,7 @@ switch ($params[0]) {
     break;  
     case 'turnosFiltrados':
         $controller = new TurnoFacilController();
-        $controller->turnosMañanaTarde($params[1]);
+        $controller->turnosMañanaTarde($params[1], $params[2]);
         break; 
 
     default: 

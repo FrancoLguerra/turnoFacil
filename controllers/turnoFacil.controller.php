@@ -159,7 +159,8 @@ class TurnoFacilController
             $turns = $this->model->getTurnsTarde($id_usuario);
         }
         $this->view->showTurns($turns);}
-
+    }
+}
     
     /*
           public function showCreateDisp($id) {
